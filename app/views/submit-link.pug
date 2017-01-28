@@ -1,0 +1,20 @@
+extends layout.pug
+
+block content
+  form(action="/link", method='post')
+    .form-group
+      label(for="url") Link URL
+      input.form-control(type='text', placeholder='Link URL', name='url', id='url')
+      small.form-text.text-muted Non sensitive links only
+    .form-group
+      label(for='name') Link display name
+      input.form-control(type='text', placeholder='Link name', name='name', id='name')
+    .form-group
+      label(for="subject") Short URL description for your friend
+      input.form-control(type='text', placeholder='Description of link content', name='subject', id='subject')
+    .form-group
+      label(for='recipient') Who do you want to send this link to?
+      select.form-control(name='recipient', id='recipient')
+        each friend in friends
+          option #{friend.username}
+    button.btn.btn-primary Submit link!

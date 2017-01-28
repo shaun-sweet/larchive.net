@@ -1,0 +1,18 @@
+extends layout.pug
+
+block content
+  h1.text-center Current Links Below!
+  table.table.table-hover.table-striped.table-bordered
+    thead
+      tr
+        th.text-center #
+        th Sender
+        th Link
+        th Date Received
+    tbody
+      each obj, num in query
+        tr
+          td.text-center=num+1
+          td #{obj.sender}
+          td: a(href="#{obj.link.url}", target="_blank") #{obj.link.text}
+          td #{obj.date}

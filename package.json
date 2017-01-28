@@ -1,0 +1,41 @@
+{
+  "name": "larchive.net",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "./node_modules/.bin/cross-env NODE_ENV=development ./node_modules/.bin/nodemon server.js 3000 -e js,pug",
+    "start": "./node_modules/.bin/cross-env NODE_ENV=production node ./server.js 80",
+    "seed": "echo 'Seeding the Database...' && node ./config/seed.js",
+    "nukedb": "cd src/ && node ./config/nukedb.js",
+    "reseed": "npm run nukedb && npm run seed",
+    "link": "echo 'linking the data' && ./config/node seed2.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "compression": "^1.6.2",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^1.3.2",
+    "cross-env": "^3.1.4",
+    "csurf": "^1.9.0",
+    "dotenv": "^4.0.0",
+    "express": "^4.14.0",
+    "express-session": "^1.15.0",
+    "flash": "^1.1.0",
+    "fs": "0.0.1-security",
+    "method-override": "^2.3.7",
+    "mongoose": "^4.7.9",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "path": "^0.12.7",
+    "pug": "^2.0.0-beta9",
+    "view-helpers": "^0.1.5",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

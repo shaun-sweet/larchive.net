@@ -1,0 +1,29 @@
+extends layout.pug
+
+block content
+  div.row
+    div.col-xs-4
+      a(href="/link") Share a link with a friend!
+    div.col-xs-4
+      h1.text-center Current Links Below!
+    div.col-xs-4
+      a(href='/login') Login
+  table.table.table-hover.table-striped.table-bordered
+    thead
+      tr
+        th.text-center #
+        th Sender
+        th Link
+        th Date Received
+        th Delete Link
+    tbody
+      //- each link, num in links
+      //-
+      //-   tr
+      //-     td.text-center=num+1
+      //-     td #{link.sender}
+      //-     td: a(href=""+link.url, target="_blank") #{link.name}
+      //-     td #{link._id}
+      //-     td
+      //-       a(href="/delete/"+link._id)
+      //-         button.btn.btn-danger Delete

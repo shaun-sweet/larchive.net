@@ -1,0 +1,9 @@
+extends layout.pug
+block content
+  h1 Please Login
+  a.btn.btn-primary(href='/auth/facebook')
+    span.fa.fa-facebook Login w Facebook
+  form(action="/login", method='post')
+    br
+    input(type="text", placeholder='login name', name='loginUsername')
+    input(type='submit')
