@@ -32,5 +32,10 @@ exports.logout = function(req, res) {
 
 // Root directory of app "/"
 exports.index = function(req, res) {
-  res.render('user/index', { username: req.session.user.username});
+  User
+    .findOne({_id: req.session.user._id})
+    .select('links username')
+    .exec( (err, user)=> {
+      res.render('user/index', user);
+    })
 }

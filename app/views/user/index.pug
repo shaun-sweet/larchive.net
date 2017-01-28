@@ -19,13 +19,13 @@ block content
         th Date Received
         th Delete Link
     tbody
-      //- each link, num in links
-      //-
-      //-   tr
-      //-     td.text-center=num+1
-      //-     td #{link.sender}
-      //-     td: a(href=""+link.url, target="_blank") #{link.name}
-      //-     td #{link._id}
-      //-     td
-      //-       a(href="/delete/"+link._id)
-      //-         button.btn.btn-danger Delete
+      each link, num in links
+
+        tr
+          td.text-center=num+1
+          td #{link.sender}
+          td: a(href=""+link.url, target="_blank") #{link.name}
+          td #{link._id}
+          td
+            a(href="/delete/"+link._id)
+              button.btn.btn-danger Delete
