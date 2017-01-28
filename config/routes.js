@@ -7,8 +7,10 @@ const link = require('../app/controllers/link');
 
 
 router.get('/', user.index);
+router.get('/link/new', link.new);
+router.get('/logout', user.logout);
 router.get('/login', user.new);
-router.get('/link/new', link.new)
+router.post('/login', user.login);
 
 
 

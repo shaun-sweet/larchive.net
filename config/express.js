@@ -82,4 +82,13 @@ module.exports = function(app, passport) {
     });
   }
 
+  app.use(checkForAuth)
+
+}
+function checkForAuth(req, res, next) {
+    if (!req.session.user && req.path != '/login') {
+      res.redirect('/login');
+    } else {
+      next();
+    }
 }
