@@ -1,4 +1,6 @@
-h1 Please Login
+extends ../layouts/layout
+block content
+  h1 Please Login
   a.btn.btn-primary(href='/auth/facebook')
     span.fa.fa-facebook Login w Facebook
   form(action="/login", method='post')

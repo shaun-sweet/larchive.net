@@ -5,4 +5,7 @@ header
         br
         small   A place to share links with friends
     div.col-xs-6
-      h3.pull-right Welcome: #{currentUser.username}
+      if  currentUser
+        h3.pull-right Welcome: #{currentUser.username}
+      else
+        h3.pull-right Welcome: Stranger!
