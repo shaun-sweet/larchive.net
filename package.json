@@ -5,6 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "sudo systemctl restart larchive",
     "dev": "./node_modules/.bin/cross-env NODE_ENV=development ./node_modules/.bin/nodemon server.js 3000 -e js,pug",
     "start": "sudo node ./server.js 80",
     "seed": "echo 'Seeding the Database...' && node ./config/seed.js",
