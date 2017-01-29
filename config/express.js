@@ -57,7 +57,7 @@ module.exports = function(app, passport) {
     resave: true,
     saveUninitialized: true,
     store: new mongoStore({
-      url: process.env.DB_CONN_URL,
+      url: 'mongodb://localhost/test',
       collection : 'sessions'
     })
   }));
