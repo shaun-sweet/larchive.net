@@ -10,7 +10,7 @@
     "seed": "echo 'Seeding the Database...' && node ./config/seed.js",
     "nukedb": "cd src/ && node ./config/nukedb.js",
     "reseed": "npm run nukedb && npm run seed",
-    "link": "echo 'linking the data' && ./config/node seed2.js"
+    "link": "echo 'linking the data' && node ./config/seed2.js"
   },
   "author": "",
   "license": "ISC",
