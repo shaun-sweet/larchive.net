@@ -23,7 +23,19 @@ exports.delete = function(req, res) {
 }
 
 exports.create = function(req, res) {
-  res.redirect('/')
+  var link = {
+    url: sanitizeLink(req.body.url),
+    name: req.body.name,
+    sender: req.session.user._id,
+    subject: req.body.subject
+  };
+  User
+    .findOne({ username: req.body.recipient})
+    .exec(function(err, user) {
+      user.links.push(link);
+      user.save();
+      res.redirect('/');
+    })
 }
 
 
@@ -34,5 +46,15 @@ function removeLink(user, linkId) {
       user.links[i].remove();
       user.save();
     }
+  }
+}
+
+function sanitizeLink(link) {
+  var expression = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
+  var regex = new RegExp(expression);
+  if (link.match(regex)) {
+    return link;
+  } else {
+    return "http://"+ link;
   }
 }

@@ -2,6 +2,7 @@ extends ../layouts/layout.pug
 
 block content
   form(action="/link", method='post')
+    input(type="hidden", name="_csrf", value=csrf_token )
     .form-group
       label(for="url") Link URL
       input.form-control(type='text', placeholder='Link URL', name='url', id='url')
