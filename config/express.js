@@ -82,13 +82,19 @@ module.exports = function(app, passport) {
     });
   }
 
-  app.use(checkForAuth)
+  app.use(checkForAuthAndSetCurrentUser)
 
 }
-function checkForAuth(req, res, next) {
+
+function checkForAuthAndSetCurrentUser(req, res, next) {
     if (!req.session.user && req.path != '/login') {
       res.redirect('/login');
     } else {
+      setCurrentUser(req,res);
       next();
     }
+}
+
+function setCurrentUser(req, res) {
+  res.locals.currentUser = req.session.user;
 }

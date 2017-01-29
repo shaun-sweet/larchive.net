@@ -3,7 +3,6 @@ const User = mongoose.model('User');
 
 
 exports.new = function (req, res) {
-  res.locals.user = {};
 
   res.render('user/login');
 };

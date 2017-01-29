@@ -11,7 +11,7 @@ router.get('/link/new', link.new);
 router.get('/logout', user.logout);
 router.get('/login', user.new);
 router.post('/login', user.login);
-
+router.get('/delete/link/:id', link.delete);
 
 
 module.exports = router;

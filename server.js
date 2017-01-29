@@ -18,7 +18,7 @@ module.exports = {
 // bootstrap models
 fs.readdirSync(models)
   .filter(file => ~file.indexOf('js'))
-  .forEach(file => console.log(require(join(models, file))))
+  .forEach(file => require(join(models, file)));
 // bootstrap config
 require('./config/express')(app, passport);
 
