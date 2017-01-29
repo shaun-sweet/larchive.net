@@ -16,16 +16,16 @@ block content
         th.text-center #
         th Sender
         th Link
-        th Date Received
+        th Received
         th Delete Link
     tbody
       each link, num in links
 
         tr
           td.text-center=num+1
-          td #{link.sender}
+          td #{link.sender.username}
           td: a(href=""+link.url, target="_blank") #{link.name}
-          td #{link._id}
+          td #{prettyDate(link.createdAt)}
           td
             a(href="/delete/link/"+link._id)
               button.btn.btn-danger Delete

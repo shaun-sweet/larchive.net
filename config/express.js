@@ -78,6 +78,7 @@ module.exports = function(app, passport) {
 
     app.use(function (req, res, next){
       res.locals.csrf_token = req.csrfToken();
+      res.locals.prettyDate = require('pretty-date').format;
       next();
     });
   }

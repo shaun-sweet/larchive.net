@@ -34,7 +34,9 @@ exports.index = function(req, res) {
   User
     .findOne({_id: req.session.user._id})
     .select('links username')
+    .populate('links.sender')
     .exec( (err, user)=> {
+      console.log(user.links);
       res.render('user/index', user);
     })
 }

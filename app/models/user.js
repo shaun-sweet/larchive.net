@@ -9,7 +9,7 @@ var usersSchema = new mongoose.Schema({
       name: String,
       sender: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
       subject: String,
-      createdAt: Date
+      createdAt: { type: Date, default: Date.now }
     }
   ],
   email: String

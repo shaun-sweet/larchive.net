@@ -9,7 +9,7 @@
     "dev": "./node_modules/.bin/cross-env NODE_ENV=development ./node_modules/.bin/nodemon server.js 3000 -e js,pug",
     "start": "sudo node ./server.js 80",
     "seed": "echo 'Seeding the Database...' && node ./config/seed.js",
-    "nukedb": "cd src/ && node ./config/nukedb.js",
+    "nukedb": "node ./config/nukedb.js",
     "reseed": "npm run nukedb && npm run seed",
     "link": "echo 'linking the data' && node ./config/seed2.js"
   },
@@ -33,6 +33,7 @@
     "morgan": "^1.7.0",
     "passport": "^0.3.2",
     "path": "^0.12.7",
+    "pretty-date": "^0.2.0",
     "pug": "^2.0.0-beta9",
     "underscore": "^1.8.3",
     "view-helpers": "^0.1.5",
