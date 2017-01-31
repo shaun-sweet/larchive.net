@@ -114,12 +114,12 @@ main.home-ui {
 
 #data-headers, .entry-row {
   display: flex; }
-  #data-headers .data-header-sender, #data-headers .data-header-sent, #data-headers .data-header-actions, #data-headers .data-sender, #data-headers .data-sent, #data-headers .data-actions, .entry-row .data-header-sender, .entry-row .data-header-sent, .entry-row .data-header-actions, .entry-row .data-sender, .entry-row .data-sent, .entry-row .data-actions {
+  #data-headers .data-header-sender, #data-headers .data-sender, .entry-row .data-header-sender, .entry-row .data-sender {
+    flex: 4; }
+  #data-headers .data-header-sent, #data-headers .data-header-actions, #data-headers .data-sent, #data-headers .data-actions, .entry-row .data-header-sent, .entry-row .data-header-actions, .entry-row .data-sent, .entry-row .data-actions {
     flex: 2; }
   #data-headers .data-header-link, #data-headers .data-link, .entry-row .data-header-link, .entry-row .data-link {
-    flex: 6;
-    display: flex;
-    justify-content: center; }
+    flex: 6; }
 
 hr {
   border-color: #979797;
