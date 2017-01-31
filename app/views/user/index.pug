@@ -1,5 +1,5 @@
 extends ../layouts/layout.pug
-
+include ../link/show.pug
 
 
 block content
@@ -17,6 +17,7 @@ block content
             h2 Actions
         hr
         each link, num in links
+          +linkDetails(link, num)
           div.entry-row
             div.data-sender
               p #{link.sender.username}
@@ -25,7 +26,7 @@ block content
             div.data-sent
               p #{prettyDate(link.createdAt)}
             div.data-actions
-              a(href="#", id='details-button')
+              a(href="#", id='details-button', data-toggle="modal", data-target="#showLink-"+num)
                 img(src="/imgs/details-button.png", alt="show link details")
               a(href="/delete/link/"+link._id)
                 img(src="/imgs/delete-button.png", alt="delete link")
@@ -33,4 +34,5 @@ block content
       p The world could use some more love
       br
       p Send some!
-      img(src='imgs/paperairplane.png', alt='send link')
+      a(href='/link/new', alt="submit new link")
+        img(src='imgs/paperairplane.png', alt='send link')

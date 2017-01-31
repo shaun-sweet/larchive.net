@@ -1,0 +1,34 @@
+mixin linkDetails(link, num)
+  - var linkId = "showLink-" + num
+  div(id=linkId).modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+    .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            h5#showLinkTitle.modal-title
+              a(href=""+link.url) #{link.name}
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') &times;
+          .modal-body
+            .url
+              .url-header
+                h6 URL:
+              .url-content
+                a(href=""+link.url) #{link.url}
+            .sender
+              .sender-header
+                h6 Sent By:
+              .sender-content
+                p #{link.sender.username}
+            .createdAt
+              .createdAt-header
+                h6 Received
+              .createdAt-content
+                p #{prettyDate(link.createdAt)}
+            .subject
+              .comments-header
+                h6 Comments
+              .comments-content
+                p #{link.subject}
+
+          .modal-footer
+            button.btn.btn-secondary(type='button', data-dismiss='modal') Close
