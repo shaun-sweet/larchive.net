@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Amatic+SC|Roboto");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,400");
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC");
 .ui-card, .login-card, main.home-ui .link-table, main.home-ui .send-link {
   background-color: #FFFFFF;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
@@ -43,20 +44,22 @@ table {
   margin-top: 1em;
   padding: 2%;
   width: 40%;
-  min-height: 70%;
   display: flex;
   flex-flow: column;
-  text-align: center; }
+  text-align: center;
+  padding-top: 3%; }
   .login-card .login-header {
     margin: 0px;
     color: #33609E;
-    font-weight: bold;
     font-size: 2vw; }
   .login-card .login-description {
     margin-top: 10%;
     color: #54719B;
-    font-size: 2vw; }
+    font-size: 2vw;
+    font-weight: 100;
+    line-height: 1.4em; }
   .login-card .facebook-login-btn img {
+    margin-top: 2em;
     max-width: 100%; }
 
 header {
@@ -69,12 +72,13 @@ header {
     left: 2%;
     top: 2%; }
   header .title-heading {
-    text-align: center; }
+    text-align: center;
+    margin-bottom: 3em; }
 
 .title-text {
   font-family: "Amatic SC";
   font-weight: bold;
-  font-size: 10vw;
+  font-size: 5vw;
   margin-top: 0px; }
 
 body {
@@ -84,7 +88,7 @@ body {
   min-height: 100vh;
   flex-direction: column;
   letter-spacing: 1.4px;
-  font-family: "Roboto"; }
+  font-family: "Roboto", sans-serif; }
 
 main {
   flex: 1 0 auto;
@@ -92,10 +96,11 @@ main {
   flex-flow: column; }
 
 #footer {
+  padding: 0.5em;
+  background-color: #e4eff6;
   text-align: center;
   color: #33609E;
-  font-size: 2vw;
-  margin-bottom: 0.3em; }
+  font-size: 1.5vw; }
 
 main.home-ui {
   display: flex;
