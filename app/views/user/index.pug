@@ -25,8 +25,10 @@ block content
             div.data-sent
               p #{prettyDate(link.createdAt)}
             div.data-actions
+              a(href="#", id='details-button')
+                img(src="/imgs/details-button.png", alt="show link details")
               a(href="/delete/link/"+link._id)
-                button.btn.btn-danger Delete
+                img(src="/imgs/delete-button.png", alt="delete link")
     div.send-link
       p The world could use some more love
       br
