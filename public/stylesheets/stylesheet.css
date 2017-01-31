@@ -50,11 +50,11 @@ table {
     margin: 0px;
     color: #33609E;
     font-weight: bold;
-    font-size: 2.5vw; }
+    font-size: 2vw; }
   .login-card .login-description {
     margin-top: 10%;
-    color: #234A5F;
-    font-size: 2.5vw; }
+    color: #54719B;
+    font-size: 2vw; }
   .login-card .facebook-login-btn img {
     max-width: 100%; }
 
@@ -93,7 +93,7 @@ main {
 #footer {
   text-align: center;
   color: #33609E;
-  font-size: 2.5vw;
+  font-size: 2vw;
   margin-bottom: 0.3em; }
 
 main.home-ui {
