@@ -1,31 +1,34 @@
 extends ../layouts/layout.pug
 
-block content
-  div.row
-    div.col-xs-4
-      a(href="/link/new") Share a link with a friend!
-    div.col-xs-4
-      h1.text-center Current Links Below!
-    div.col-xs-2
-      a(href='/login') Login
-    div.col-xs-2
-      a(href='/logout') Logout
-  table.table.table-hover.table-striped.table-bordered
-    thead
-      tr
-        th.text-center #
-        th Sender
-        th Link
-        th Received
-        th Delete Link
-    tbody
-      each link, num in links
 
-        tr
-          td.text-center=num+1
-          td #{link.sender.username}
-          td: a(href=""+link.url, target="_blank") #{link.name}
-          td #{prettyDate(link.createdAt)}
-          td
-            a(href="/delete/link/"+link._id)
-              button.btn.btn-danger Delete
+
+block content
+  main.home-ui
+    div.link-table
+        h1.table-header Latest Distractions
+        div#data-headers
+          div.data-header-sender
+            h2 Sender
+          div.data-header-link
+            h2 Link
+          div.data-header-sent
+            h2 Sent
+          div.data-header-actions
+            h2 Actions
+        hr
+        each link, num in links
+          div.entry-row
+            div.data-sender
+              p #{link.sender.username}
+            div.data-link
+              a(href=""+link.url, target="_blank") #{link.name}
+            div.data-sent
+              p #{prettyDate(link.createdAt)}
+            div.data-actions
+              a(href="/delete/link/"+link._id)
+                button.btn.btn-danger Delete
+    div.send-link
+      p The world could use some more love
+      br
+      p Send some!
+      img(src='imgs/paperairplane.png', alt='send link')

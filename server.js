@@ -25,7 +25,8 @@ require('./config/express')(app, passport);
 // bootstrap routes
 app.use('/', require('./config/routes'));
 
-
+require('./config/passport')(passport);
+require('./config/fb-routes.js')(app, passport)
 // run server after mongoose connects
 connection
   .then(()=> listen())

@@ -1,0 +1,40 @@
+main.home-ui
+  display: flex
+  flex-direction: row
+  align-items: flex-start
+  .link-table
+    display: flex
+    flex-flow: column
+    flex: 5
+    padding: 2em
+    @extend .ui-card
+    margin: 6em 1em 0em 2em
+  .send-link
+    @extend .ui-card
+    flex: 1
+    margin: 6em 2em 0em 1em
+    padding: 1em
+    text-align: center
+#data-headers, .entry-row
+  display: flex
+  .data-header-sender, .data-header-sent, .data-header-actions, .data-sender, .data-sent, .data-actions
+    flex: 2
+  .data-header-link, .data-link
+    flex: 6
+    display: flex
+    justify-content: center
+
+
+hr
+  border-color: #979797
+  margin-left: 0
+  margin-right: 0
+h2
+  font-size: 3vw
+.td-labels, td
+  color: $font-primary-color
+
+.table-header
+  text-align: center
+  font-size: 4vw
+  margin-bottom: 1em

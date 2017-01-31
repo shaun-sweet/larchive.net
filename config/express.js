@@ -79,6 +79,7 @@ module.exports = function(app, passport) {
     app.use(function (req, res, next){
       res.locals.csrf_token = req.csrfToken();
       res.locals.prettyDate = require('pretty-date').format;
+      res.locals.path = req.path;
       next();
     });
   }
@@ -88,7 +89,7 @@ module.exports = function(app, passport) {
 }
 
 function checkForAuthAndSetCurrentUser(req, res, next) {
-    if (!req.session.user && req.path != '/login') {
+    if (!req.session.user && req.path != '/login' && req.path != '/auth/facebook' && req.path != '/auth/facebook/callback' && req.path != '/profile') {
       res.redirect('/login');
     } else {
       setCurrentUser(req,res);

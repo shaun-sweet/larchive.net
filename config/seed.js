@@ -16,20 +16,20 @@ User.create({
     username: 'test1',
     pictureUrl: faker.image.imageUrl(),
     email: faker.internet.email()
-  }).then(function(cum) {
+  }).then(function(test1) {
     User.create({
       username: 'test2',
       pictureUrl: faker.image.imageUrl(),
       email: faker.internet.email()
-    }).then(function(avalon) {
-      shaun.friends.push(cum._id);
-      shaun.friends.push(avalon._id);
+    }).then(function(test2) {
+      shaun.friends.push(test1._id);
+      shaun.friends.push(test2._id);
       shaun.save();
-      avalon.friends.push(shaun._id);
-      avalon.save();
-      cum.friends.push(shaun._id);
-      cum.save();
-      console.log(shaun, cum, avalon);
+      test2.friends.push(shaun._id);
+      test2.save();
+      test1.friends.push(shaun._id);
+      test1.save();
+      console.log(shaun, test1, test2);
     })
   })
 })

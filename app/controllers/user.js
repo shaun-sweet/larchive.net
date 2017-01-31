@@ -36,7 +36,6 @@ exports.index = function(req, res) {
     .select('links username')
     .populate('links.sender')
     .exec( (err, user)=> {
-      console.log(user.links);
       res.render('user/index', user);
     })
 }

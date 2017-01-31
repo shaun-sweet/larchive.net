@@ -1,8 +1,17 @@
+// Vars
+$font-primary-color: #33609E
+$font-secondary-color: #234A5F
+$font-header-size: 10vw
+$font-secondary-size: 2.5vw
+// Base Classes
+.ui-card
+  background-color: #FFFFFF
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5)
+  border-radius: 8px
+  color: $font-primary-color
+
 @import reset
-
-.wrapper
-  min-height: 100vh
-  margin-bottom: -50px
-
-#footer
-  height: 50px
+@import login-card
+@import header
+@import body-footer
+@import link-table
