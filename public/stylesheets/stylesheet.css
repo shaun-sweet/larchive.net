@@ -121,6 +121,9 @@ main.home-ui {
   #data-headers .data-header-link, #data-headers .data-link, .entry-row .data-header-link, .entry-row .data-link {
     flex: 6; }
 
+.entry-row div {
+  margin-top: 0.4em; }
+
 hr {
   border-color: #979797;
   margin-left: 0;
