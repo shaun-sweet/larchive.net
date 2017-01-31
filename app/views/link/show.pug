@@ -21,12 +21,12 @@ mixin linkDetails(link, num)
                 p #{link.sender.username}
             .createdAt
               .createdAt-header
-                h6 Received
+                h6 Received:
               .createdAt-content
                 p #{prettyDate(link.createdAt)}
             .subject
               .comments-header
-                h6 Comments
+                h6 Comments:
               .comments-content
                 p #{link.subject}
 
