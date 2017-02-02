@@ -25,14 +25,15 @@ exports.login = function(req, res) {
 
 // logout
 exports.logout = function(req, res) {
-  req.session.user = null;
+  req.user = null;
+  req.logout();
   res.redirect('/login');
 }
 
 // Root directory of app "/"
 exports.index = function(req, res) {
   User
-    .findOne({_id: req.session.user._id})
+    .findOne({_id: req.user._id})
     .select('links username')
     .populate('links.sender')
     .exec( (err, user)=> {

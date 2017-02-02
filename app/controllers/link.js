@@ -3,7 +3,7 @@ const User = mongoose.model('User');
 
 exports.new = function(req, res) {
   User
-    .findOne({_id: req.session.user._id})
+    .findOne({_id: req.user._id})
     .populate('friends')
     .exec( (err, friends) => {
 
@@ -13,7 +13,7 @@ exports.new = function(req, res) {
 
 exports.delete = function(req, res) {
   User
-    .findOne({ _id: req.session.user._id })
+    .findOne({ _id: req.user._id })
     .select('links')
     .exec(function(err, user) {
       // has to be a better way.  Definitely a refactor
@@ -26,7 +26,7 @@ exports.create = function(req, res) {
   var link = {
     url: sanitizeLink(req.body.url),
     name: req.body.name,
-    sender: req.session.user._id,
+    sender: req.user._id,
     subject: req.body.subject
   };
   User

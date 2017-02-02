@@ -4,6 +4,7 @@ var express = require('express');
 var compression = require('compression');
 var morgan = require('morgan');
 var flash = require('connect-flash');
+var _ = require('underscore');
 var csrf = require('csurf');
 var methodOverride = require('method-override');
 var pug = require('pug');
@@ -83,20 +84,30 @@ module.exports = function(app, passport) {
       next();
     });
   }
-
-  app.use(checkForAuthAndSetCurrentUser)
+  app.use(devLogging);
+  app.use(isLoggedIn);
 
 }
 
-function checkForAuthAndSetCurrentUser(req, res, next) {
-    if (!req.session.user && req.path != '/login' && req.path != '/auth/facebook' && req.path != '/auth/facebook/callback' && req.path != '/profile') {
-      res.redirect('/login');
-    } else {
-      setCurrentUser(req,res);
-      next();
+function devLogging(req, res, next) {
+  console.log('REQUEST INFO*********************');
+  console.log("User session: ", req.user);
+  next();
+};
+
+// route middleware to make sure a user is logged in
+function isLoggedIn(req, res, next) {
+  // if user is coming to login page, don't try to auth them
+    var exemptPaths = ['/login', '/auth/facebook', '/auth/facebook/callback']
+    if (_.contains(exemptPaths, req.path)) return next();
+    // if user is authenticated in the session, carry on
+    if (req.isAuthenticated()) {
+      setCurrentUser(req, res);
+      return next();
     }
+    res.redirect('/login');
 }
 
 function setCurrentUser(req, res) {
-  res.locals.currentUser = req.session.user;
+  res.locals.currentUser = req.user;
 }
