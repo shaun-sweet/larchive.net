@@ -38,9 +38,7 @@ module.exports = function(passport) {
 
     // facebook will send back the token and profile
     function(token, refreshToken, profile, done) {
-      // console.log(profile);
         // asynchronous
-        console.log(profile);
         var fb = profile._json;
         process.nextTick(function() {
 
@@ -55,11 +53,12 @@ module.exports = function(passport) {
                 if (user) {
                   // console.log(user);
                   // console.log(user);
+                    user.facebook.token = token;
+                    user.save();
                     return done(null, user); // user found, return that user
                 } else {
                     // if there is no user found with that facebook id, create them
                     var newUser            = new User();
-                    console.log("ELSE GOT GOT ********************");
                     var facebook = {};
                     facebook.id = fb.id;
                     facebook.token = token;

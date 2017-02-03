@@ -21722,7 +21722,7 @@ var App = function (_React$Component) {
   return App;
 }(_react2.default.Component);
 
-(0, _reactDom.render)(_react2.default.createElement(App, null), document.getElementById('app'));
+(0, _reactDom.render)(_react2.default.createElement(App, null), document.getElementById('submit-link'));
 
 /***/ })
 /******/ ]);

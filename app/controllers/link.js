@@ -6,7 +6,7 @@ exports.new = function(req, res) {
     .findOne({_id: req.user._id})
     .populate('friends')
     .exec( (err, friends) => {
-
+      res.locals.token = req.user.facebook.token;
       res.render('link/new', friends)
     })
 }
