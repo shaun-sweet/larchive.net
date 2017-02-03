@@ -1,8 +1,8 @@
 extends ../layouts/layout.pug
 
 block content
-  input(type="hidden", name="_csrf", value=csrf_token, fbToken=token)
-  div.container#submit-link
+  input(type="hidden", name="_csrf", value=csrf_token, fbToken=token, id="secret")
+  #sweet
 
 
     //- form(action="/link", method='post', id='new-link-form')
