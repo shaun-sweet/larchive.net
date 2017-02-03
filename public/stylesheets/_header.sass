@@ -1,17 +1,20 @@
 header
   display: flex
-  justify-content: center
+  justify-content: space-between
   .profile-info
     color: $font-primary-color
-    font-weight: bold
-    position: absolute
-    left: 2%
-    top: 2%
+    flex: 1
+    h3, .logout
+      margin-left: 2em
+    .logout
+      font-weight: bold
+
   .title-heading
-    text-align: center
+    flex: 1
     margin-bottom: 3em
-
-
+    text-align: center
+  .spacer
+    flex: 1
 .title-text
   font-family: $amatic
   font-weight: bold

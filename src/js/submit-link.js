@@ -80,7 +80,7 @@ class LinkSubmitForm extends React.Component {
 
   render () {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} id="new-link-form" className="container">
         <input type='hidden' name="_csrf" value={this.state.formData._csrf} />
         <div className='form-group'>
           <label htmlFor="url"> Link URL </label>
@@ -98,7 +98,7 @@ class LinkSubmitForm extends React.Component {
           <input className='form-control' type='text' placeholder="Send to?" list='friends' name='recipient' onChange={this._handleInputChange.bind(this)} />
           <datalist id='friends' name='recipient'>
             {this.state.friends.map(function(friend, index) {
-              return <option value={friend.name} key={friend.id} />
+              return <option  value={friend.name} key={friend.id} />
             })}
           </datalist>
         </div>

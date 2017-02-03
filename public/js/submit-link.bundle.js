@@ -64750,7 +64750,7 @@ var LinkSubmitForm = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'form',
-        { onSubmit: this.handleSubmit },
+        { onSubmit: this.handleSubmit, id: 'new-link-form', className: 'container' },
         _react2.default.createElement('input', { type: 'hidden', name: '_csrf', value: this.state.formData._csrf }),
         _react2.default.createElement(
           'div',
