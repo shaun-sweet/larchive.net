@@ -60,7 +60,7 @@ module.exports = function(passport) {
                     // if there is no user found with that facebook id, create them
                     var newUser            = new User();
                     var facebook = {};
-                    newUser._id = fb.id;
+                    newUser.fbId = fb.id;
                     facebook.token = token;
                     facebook.name = profile.name.givenName + ' ' + profile.name.familyName;
                     newUser.facebook = facebook;
