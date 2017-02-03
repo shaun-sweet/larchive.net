@@ -34,8 +34,12 @@ exports.create = function(req, res) {
     .exec(function(err, user) {
       console.log('link saved *****************');
       user.links.push(link);
-      user.save();
-      res.redirect('/');
+      user.save(function(err, updatedUser) {
+        console.log(link);
+        console.log(updatedUser);
+        res.redirect('/');
+      });
+
     })
 }
 
