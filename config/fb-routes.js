@@ -30,5 +30,3 @@ module.exports = function(app, passport) {
 
 
 };
-
-// https://graph.facebook.com/oauth/access_token?client_id=145337692637557&client_secret=e80a4bb3e3fcc5711559003fe8b83aa3&grant_type=fb_exchange_token&fb_exchange_token=EAACELxGKyXUBACHrnghQeduX1VjJZC1Mk1IvkZAtpUd18ZBSJUDqCMAKXPxkuQjR8AdZCVBpVX4W5mXfztBN45XOPPa1uN7kss94X7gu7ErwKfhjA5DPRBbv2TO54Pk4vyMg2H8ceQ9zPNhhymUJWALKJTEgdeIZD

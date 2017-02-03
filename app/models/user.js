@@ -2,9 +2,9 @@ var mongoose = require('mongoose');
 var usersSchema = new mongoose.Schema({
   username: String,
   pictureUrl: String,
+  _id: String,
   facebook: {
-    id: Number,
-    token: String,
+    token: String
   },
   friends: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
   links: [

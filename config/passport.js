@@ -60,7 +60,7 @@ module.exports = function(passport) {
                     // if there is no user found with that facebook id, create them
                     var newUser            = new User();
                     var facebook = {};
-                    facebook.id = fb.id;
+                    newUser._id = fb.id;
                     facebook.token = token;
                     facebook.name = profile.name.givenName + ' ' + profile.name.familyName;
                     newUser.facebook = facebook;
@@ -69,14 +69,12 @@ module.exports = function(passport) {
                     // newUser.facebook.email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
                     // console.log(newUser);
                     // save our user to the database
-                    console.log(facebook);
                     // console.log("Prior to save: ", newUser);
                     newUser.save(function(err) {
 
                         if (err)
                             throw err;
                         // if successful, return the new user
-                        console.log(newUser);
                         return done(null, newUser);
                     });
                 }

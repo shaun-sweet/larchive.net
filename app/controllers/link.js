@@ -23,6 +23,7 @@ exports.delete = function(req, res) {
 }
 
 exports.create = function(req, res) {
+  console.log(req.body);
   var link = {
     url: sanitizeLink(req.body.url),
     name: req.body.name,
@@ -30,7 +31,7 @@ exports.create = function(req, res) {
     subject: req.body.subject
   };
   User
-    .findOne({ username: req.body.recipient})
+    .findOne({ _id: req.body.recipient})
     .exec(function(err, user) {
       user.links.push(link);
       user.save();
