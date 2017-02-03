@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 var usersSchema = new mongoose.Schema({
+  _id: Number,
   username: String,
   pictureUrl: String,
-  _id: String,
   facebook: {
     token: String
   },
@@ -17,5 +17,5 @@ var usersSchema = new mongoose.Schema({
     }
   ],
   email: String
-});
+}, { _id: false });
 mongoose.model('User', usersSchema);
