@@ -90,8 +90,6 @@ module.exports = function(app, passport) {
 }
 
 function devLogging(req, res, next) {
-  console.log('REQUEST INFO*********************');
-  console.log("User session: ", req.user);
   next();
 };
 

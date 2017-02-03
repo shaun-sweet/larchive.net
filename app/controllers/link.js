@@ -23,7 +23,6 @@ exports.delete = function(req, res) {
 }
 
 exports.create = function(req, res) {
-  console.log(req.body);
   var link = {
     url: sanitizeLink(req.body.url),
     name: req.body.name,
@@ -33,6 +32,7 @@ exports.create = function(req, res) {
   User
     .findOne({ _id: req.body.recipient})
     .exec(function(err, user) {
+      console.log('link saved *****************');
       user.links.push(link);
       user.save();
       res.redirect('/');
