@@ -30,7 +30,7 @@ exports.create = function(req, res) {
     subject: req.body.subject
   };
   User
-    .findOne({ fbId: parseInt(req.body.recipient)})
+    .findOne({ _id: req.body.recipient})
     .exec(function(err, user) {
       console.log('link saved *****************');
       user.links.push(link);
