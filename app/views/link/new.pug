@@ -1,7 +1,9 @@
 extends ../layouts/layout.pug
 
 block content
-  div.container
+  script(src="/js/submit-link.js")
+  div.container.submit-link
+    input(type="hidden", name="_csrf", value=csrf_token )
     form(action="/link", method='post', id='new-link-form')
       input(type="hidden", name="_csrf", value=csrf_token )
       .form-group
