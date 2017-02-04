@@ -1,10 +1,9 @@
 header
-  div.profile-info
-    if path != "/login"
-      if  currentUser
+  if path != "/login"
+    if  currentUser
+      div.profile-info
         h3 #{currentUser.username}
         div.logout
           a(href='/logout') Logout
   div.title-heading
     h1.title-text: a(href="/") Link Archive
-  .spacer

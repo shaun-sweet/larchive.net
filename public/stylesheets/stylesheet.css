@@ -66,20 +66,17 @@ table {
 
 header {
   display: flex;
-  justify-content: space-between; }
+  justify-content: center; }
   header .profile-info {
-    color: #33609e;
-    flex: 1; }
-    header .profile-info h3, header .profile-info .logout {
-      margin-left: 2em; }
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    color: #33609e; }
     header .profile-info .logout {
       font-weight: bold; }
   header .title-heading {
-    flex: 1;
     margin-bottom: 3em;
     text-align: center; }
-  header .spacer {
-    flex: 1; }
 
 .title-text {
   font-family: "Amatic SC";
@@ -200,6 +197,47 @@ h2 {
   justify-content: space-between;
   margin-top: 0.2em; }
 
-@media only screen and (max-width: 500px) {
-  body {
-    background-color: lightblue; } }
+@media only screen and (max-width: 665px) {
+  .login-card {
+    margin: auto;
+    margin-top: 1em;
+    padding: 2%;
+    width: 40%;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    padding-top: 3%; }
+    .login-card .login-header {
+      margin: 0px;
+      font-size: 15px; }
+    .login-card .login-description {
+      margin-top: 10%;
+      color: #54719b;
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.4em; }
+    .login-card .facebook-login-btn img {
+      margin-top: 2em;
+      max-width: 100%; } }
+@media only screen and (max-width: 415px) {
+  .login-card {
+    margin: auto;
+    margin-top: 1em;
+    padding: 2%;
+    width: 40%;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    padding-top: 3%; }
+    .login-card .login-header {
+      margin: 0px;
+      font-size: 10px; }
+    .login-card .login-description {
+      margin-top: 10%;
+      color: #54719b;
+      font-size: 10px;
+      font-weight: 300;
+      line-height: 1.4em; }
+    .login-card .facebook-login-btn img {
+      margin-top: 2em;
+      max-width: 100%; } }

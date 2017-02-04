@@ -8,8 +8,3 @@ block content
 
     a.facebook-login-btn(href='/auth/facebook')
       img(src='/imgs/facebook-login.png', alt='login with facebook')
-    form(action="/login", method='post')
-      br
-      input(type="text", placeholder='login name', name='loginUsername')
-      input(type='submit')
-      input(type="hidden", name="_csrf", value=csrf_token )
